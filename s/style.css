@@ -2,7 +2,7 @@ html {
     height: 100%;
 }
 body {
-    background: #bcdee7 url("background.png") no-repeat center center fixed;
+    background: #308EB3 url("background.png") no-repeat center center fixed;
     background-size: cover;
     position: fixed;
     padding: 0px;
@@ -16,7 +16,7 @@ body:before {
     content: "";
     height: 0px;
     padding: 0px;
-    border: 110em solid #313440;
+    border: 110em solid #308EB3;
     position: absolute;
     left: 50%;
     top: 100%;
@@ -35,6 +35,7 @@ h1, h2 {
 }
 h1 {
     font-size: 24px;
+    font-weight: bold;
 }
 h2 {
     font-size: 16px;
@@ -62,6 +63,23 @@ p {
     -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_landscape 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
     animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_landscape 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
+.profile-card  .fix-position {
+    position: relative;
+    margin-top: 1px;
+    margin-left: 1px;
+    z-index: 33;    
+    overflow: hidden;
+}
+.profile-card  .fix-position .hire-me {
+    cursor: pointer;
+    display: inline-block;
+    color:white;
+    background-color: #308EB3;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 33;
+}
 .profile-card header {
     width: 179px;
     height: 280px;
@@ -76,9 +94,10 @@ p {
     text-align: center;
     -webkit-animation: moveIn 1s 3.1s ease forwards;
     animation: moveIn 1s 3.1s ease forwards;
+    position: relative;
 }
 .profile-card header h1 {
-    color: #FF5722;
+    color: #308EB3;
 }
 .profile-card header a {
     display: inline-block;
@@ -101,7 +120,7 @@ p {
     box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
 }
 .profile-card .profile-bio {
-    width: 175px;        
+    width: 210px;        
     height: 180px;
     display: inline-block;
     float: right;
@@ -112,6 +131,12 @@ p {
     opacity: 0;
     -webkit-animation: moveIn 1s 3.1s ease forwards;
     animation: moveIn 1s 3.1s ease forwards;
+}
+.profile-card .profile-bio .contact-info {
+    display: none;
+}
+.contact-info {
+    margin-top: 15px;
 }
 .contact-info > span {
     display: block;
@@ -126,7 +151,7 @@ p {
     display: inline-block;
     float: right;
     margin: 0px;
-    padding: 15px 20px;
+    padding: 10px 20px;
     background: #FFFFFF;
     margin-top: 50px;
     text-align: center;
@@ -144,7 +169,7 @@ p {
     width: 33.3%;
     text-align: center;
 }
-.profile-social-links li a {
+.profile-social-links a {
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -153,6 +178,14 @@ p {
     overflow: hidden!important;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+    color:#308EB3;
+    text-decoration: none;
+}
+.profile-social-links a:hover {
+    text-decoration: none;
+}
+.profile-social-links a i {
+    font-size: 150%;
 }
 .profile-social-links li a img {
     position: relative;
@@ -183,8 +216,39 @@ p {
 .profile-social-links li a svg {
     width: 24px;
 }
-
-
+#magic {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    left: 50%;
+    margin-left: -25px;
+    overflow: hidden;
+    cursor: pointer !important;
+}
+#magic > span {
+/*    webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0px 3px 6px rgba(0 ,0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);    */
+    display: block;
+    border-radius: 30px;
+    padding: 10px 10px;
+    cursor: pointer;    
+}
+#magic > span i {
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer; 
+}
+#no-magic {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    widt: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+}
 @media screen and (min-aspect-ratio: 4/3) {
     body {
         background-size: 100% auto;
@@ -230,12 +294,18 @@ p {
         float: none;
         border-right: none;
     }
+    .profile-card header .contact-info {
+        display: none;
+    }
     .profile-card .profile-bio {
         width: auto;
         height: auto;
         padding: 15px 20px 30px 20px;
         display: block;
         float: none; 
+    }
+    .profile-card .profile-bio .contact-info {
+        display: block;
     }
     .profile-social-links {
         width: 100%;       
@@ -397,8 +467,8 @@ p {
         -webkit-border-radius: 4px;
     }
     100% {
-        width: 440px;
-        height: 280px;
+        width: 520px;
+        height: 380px;
         background: #FFFFFF;
         -webkit-border-radius: 4px;
     }
@@ -411,8 +481,8 @@ p {
         border-radius: 4px;
     }
     100% {
-        width: 440px;
-        height: 280px;
+        width: 520px;
+        height: 380px;
         background: #FFFFFF;
         border-radius: 4px;
     }
@@ -425,8 +495,8 @@ p {
         -webkit-border-radius: 4px;
     }
     100% {
-        width: 280px;
-        height: 440px;
+        width: 380px;
+        height: 520px;
         background: #FFFFFF;
         -webkit-border-radius: 4px;
     }
@@ -439,8 +509,8 @@ p {
         border-radius: 4px;
     }
     100% {
-        width: 280px;
-        height: 440px;
+        height: 520px;
+        width: 380px;        
         background: #FFFFFF;
         border-radius: 4px;
     }

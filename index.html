@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Phuong Vu</title>
         <meta charset='UTF-8'>
-
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link  rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto" />
         <link rel="stylesheet" type="text/css" href="s/style.css"/>    
@@ -12,33 +12,50 @@
         <aside class="profile-card">
             <header>
                 <a href="https://vn.linkedin.com/in/phanvuphuong">
-                    <img src="http://victory-design.ru/sandbox/codepen/profile_card/avatar.svg" />
+                    <img src="s/avatar.png" />
                 </a>
                 <h1>Phuong Vu</h1>
                 <h2>Web Developer</h2>
+                
+                <div class="contact-info" id="contact1">
+                    <span title="Mobile phone">
+                        <i class="icon-mobile"></i>
+                        <span data-prepend="+84984942464" class="prepend"></span>
+                    </span>
+                    <span title="Email">
+                        <i class="icon-email"></i>
+                        <span data-prepend="boingonline" class="prepend">@gmail.com</span>
+                    </span>                    
+                    <span title="Skype">
+                        <i class="icon-skype"></i>
+                        <span data-prepend="phuong.pvp" class="prepend"></span>
+                    </span>                               
+                </div>                 
             </header>
 
             <!-- bit of a bio; who are you? -->
             <div class="profile-bio">
-                <p>Even when everything is perfect, you can always make it better. Break barriers in your head, create something crazy and don't forget Code is Poetry...</p>
-                <div class="contact-info">
+                <p>
+                Hi buddy, I'm a frontend, backend developer.
+                I love to work with cross platform architecture, social network, e-commerce platform, build platform for startup.
+                <br>Nice to meet your, Get in touch:
+                </p>
+                <div class="contact-info" id="contact2">
                     <span title="Mobile phone">
                         <i class="icon-mobile"></i>
-                        <span>+84984942464</span>
+                        <span data-prepend="+84984942464" class="prepend"></span>
                     </span>
                     <span title="Email">
                         <i class="icon-email"></i>
-                        <span data-prepend="boingonline">boingonline@gmail.com</span>
+                        <span data-prepend="boingonline" class="prepend">@gmail.com</span>
                     </span>                    
                     <span title="Skype">
                         <i class="icon-skype"></i>
-                        <span data-prepend="phuong.pvp">phuong.pvp</span>
+                        <span data-prepend="phuong.pvp" class="prepend"></span>
                     </span>                               
                 </div>                
             </div>
 
-
-            <!-- some social links to show off -->
             <ul class="profile-social-links">
                 <!-- twitter - el clásico  -->
                 <li>
@@ -52,11 +69,30 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/phuong">
-                        <i class="icon-github"></i>
+                    <a href="https://twitter.com/boingonline">
+                        <i class="icon-twitter"></i>
                     </a>
                 </li>
             </ul>
         </aside>
+        
+        
+        <div id="magic">
+            <span><i class="icon-magic-wand"></i></span>
+        </div>
+        
+        <div id="no-magic">
+            
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>        
+        <script>
+            $(document).ready(function () {
+                $("#contact1, #contact2").find('.prepend').each(function () {
+                    var text = $(this).text();
+                    text = ($(this).data('prepend') || '') + text;
+                    $(this).text(text);
+                })
+            });
+        </script>
     </body>
 </html>

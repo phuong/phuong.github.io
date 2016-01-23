@@ -81,8 +81,10 @@
             <span><i class="icon-magic-wand"></i></span>
         </div>
         
-        <div id="no-magic">
-            
+        <div id="no-magic" style="display:none">
+            <div>
+                <img src="s/no-power.gif">
+            </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>        
         <script>
@@ -92,6 +94,13 @@
                     text = ($(this).data('prepend') || '') + text;
                     $(this).text(text);
                 })
+                
+                $("#magic").click(function () {
+                    $("#no-magic").show();
+                    setTimeout(function () {
+                        $("#no-magic").hide();
+                    }, 3000);
+                });
             });
         </script>
     </body>
